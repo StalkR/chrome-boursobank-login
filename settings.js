@@ -1,14 +1,13 @@
-var defaults = {
+const DEFAULTS = {
   username: '',
-  password: '',
-  enabled: true,
+  password: ''
 };
 
 function loadSettings() {
   return new Promise(resolve => {
     chrome.storage.sync.get('settings', function(items) {
       if (chrome.runtime.error || items.settings === undefined) {
-        resolve(defaults);
+        resolve(DEFAULTS);
         return;
       }
       resolve(items.settings);

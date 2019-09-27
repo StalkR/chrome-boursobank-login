@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Boursorama Login",
-  "version": "1.4",
+  "version": "1.5",
   "icons": {
     "16": "icon16.png",
     "48": "icon48.png",
@@ -16,7 +16,6 @@
   ],
   "background": {
     "scripts": [
-      "settings.js",
       "background.js"
     ],
     "persistent": false

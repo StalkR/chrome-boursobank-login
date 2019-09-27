@@ -1,4 +1,4 @@
-var IMAGES = {
+const IMAGES = {
   '0': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAACXBIWXMAAAsTAAALEwEAmpwYAAACSUlEQVRYhe2XTWgTQRiGP9Za6UGEUsRWK4JV0VJBEBVBrKLYqGihIFW8C560ICJ4iIqpaSlexJM/+IeH5OwPBoRCD8WDgiyKwSJ6iD8NQsKuyc7Mux7c2DHEze502yR03+NH5ptn3u/N7C7RPKtt6qw233uGalg9jaTCuCjr1Lmkf/eGurd4XsQY2wrgOYCfAL4AuG2aZofvTasptitTEepxS6tGRLSZD/4XmnPeD4DZZQKQKRaLXapMfdsOzew5ePzdrIJqGMYKAIYD9k0IMQQgXgIHMOmnX/8Hy51n+HtOCRjA1ZKDnPPDUn1Mqu9V6R2oAEw6zuV1XW8q1RljO6QIxOcU4tX+z1VdBpB1YN7K9Xw+3yqBJoiI+pp7NCKi1PJ1s78Xf7GYryZSFifkuq7rTRLoi2p9YgN75uZS/zj250AujraVOxqIrAsTnk509GLnP7+TM5pOp5tLdcbYTgl01EvvpZEpdVcTu91fywAMS//uI1L9ulTfpwygomfJjRoRUbxr/V940zQ7ABRt27aF4D+ke1Q4br6ORqPKe07TSHDZFUKcBFD+YLIBZC3L2uS29vJ4uzpI5HTc92LOeS+Al86zPgPgUaFQWK0M4VW3lt2oCJvTDobvhg2vJRvuuU/ReGKEYw7VMPraviaQvF6a7q3v3OeO3a1vwGp6f/N8Yx9g4alnJBuObGFr++ji2kcg9aBbCeLMqoHaw4cKSrErM9/9qc5rFUd7Ym1L/Yx85aJEIDB33nj/DE4+PFA7A8Y/3a8f94PUbzSvr37EL0fEAAAAAElFTkSuQmCC',
   '1': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAACXBIWXMAAAsTAAALEwEAmpwYAAABBElEQVRYhWNgGAWjAAJKpHWZBtoNo2DIgd+/fxv9+/fv4///////+/dvKzXNplp6/PXrlx4zM/NuRkZGPkrMWf9yEnXzyKpnXnADf/36pfXv37/X/5EAtUOUYvDz50+Vf//+PYc67iWtHEpyMF8NX42ih5mZWYWBgUHk////7/78+eNMNZfRAvz9+zfi9+/fRgwMDAyDNurRwaCJ+oECWB1qs9l9yHiAbEBK1G/wCRu4ABlNowPtAKqC9yGnhpeHRsEoGAUkArmSAopLgZwc5hFakkyKqhr+Pv9+3pE+nnwU4UFVi3a2PB68seOR5DJ4HTcKRsEoGAWjYBCDafvYR2sQagAAc6+WvYU27AQAAAAASUVORK5CYII=',
   '2': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAACXBIWXMAAAsTAAALEwEAmpwYAAACsElEQVRYhe2YQWjUQBSG3y6riC2ligreiofi2ZN4qCDiSbwoCh5E9iQeigiKeih4LFJEPGhREMEibCmoUDyJW0R6aBSkFClSrCwtBdklKVmaOHn/8/Iiw3ZDq7vbVMgHYZOXzMyXmZfJZIkyMjIy/pogCPrMr+ghgK8A6rrNMPPg3NxcIW0/IiJi5iKAUBIAMLW4uLgzvr5+cH8+FVEAoyq0BuAZM19l5psAvseyzHwtFTkbx3EKAEaDIDhkx8Mw7Ld6dTItvw1ZXV3da4m+brW+juVLV1dXMd4XkelOtdMSxpijANa0Nz3f9w+k7bQOY8wxAJ71IJ1P22kdURSdBlC3JAfTdloHM18BwDrchpmLG5faPLl2VAJgJJfLXRcI5fI5EpEXIvIuPi8ibqFQeNWOtloi6a1kTU/zRETd5vM/zzJb+jrzdxzBVraXkZGRsZ0olUp5AEs6gc80nm8yyYcAPoZh2B9fU61WuwEMA1jQ8xUAIysrK7vbJhpF0SlbJAzDw42iADwAz3Wb1th7IiLXdXsBzGrsB4AJAPN6/MFxnM1/BN4Yf5P4pgIwppW+1N/hJqLz8XGtVuvR2KyWf6DH4/HHXrlczgN4xMy3KpXKrk2LJqFDVgfw0/f9fQAMgKVSqfTnxpr06AyAkJnPqWhFRKSji2hmLqrIqDb6VkQkiqKTtmiTPP0SBEGfljEcRV6z+u/tudCeNQeAKRU7oeKXVGTMFrWH3hgzoLEJraOzPRoEQR+ApOVbvVqtdjcT9TyvV2PfVPR+Qo4+YeY7y8vLreUoMw/Fw2jl33MACyIizHzZErVz9JPGJomIXNftaXjqx62nfqpcLrc2/LGQMWag4QYuxo3Eog29bQBMb/k8ui24e8ZJ54+rjP+dyae1LHUSeTx0dlv1zu3B43kiot80rocwagpknwAAAABJRU5ErkJggg==',
@@ -20,57 +20,57 @@ function compare(img1, img2) {
 }
 
 async function login() {
-  var settings = await loadSettings();
-  if (!settings.enabled || !settings.username || !settings.password) {
+  let settings = await loadSettings();
+  if (!settings.username || !settings.password) {
     return;
   }
-  var forms = document.getElementsByClassName('js-form-login');
+  let forms = document.getElementsByClassName('js-form-login');
   if (forms.length != 1) {
     console.log('Want 1 <form> #password-input, got ' + forms.length);
     return;
   }
-  var form = forms[0];
-  var inputLogin = document.getElementById('form_login');
+  let form = forms[0];
+  let inputLogin = document.getElementById('form_login');
   if (!inputLogin) {
     console.log('Could not find form_login');
     return;
   }
   inputLogin.value = settings.username;
-  var inputPassword = document.getElementById('form_password');
+  let inputPassword = document.getElementById('form_password');
   if (!inputPassword) {
     console.log('Could not find form_password');
     return;
   }
-  var uls = document.getElementsByClassName('password-input');
+  let uls = document.getElementsByClassName('password-input');
   if (uls.length != 1) {
     console.log('Want 1 <ul> #password-input, got ' + uls.length);
     return;
   }
-  var lis = uls[0].children;
+  let lis = uls[0].children;
   if (lis.length != 10) {
     console.log('Want 10 <li> inputs, got ' + lis.length);
     return;
   }
-  var buttons = [];
-  for (var i = 0; i < lis.length; i++) {
-    var children = lis[i].children;
+  let buttons = [];
+  for (let i = 0; i < lis.length; i++) {
+    let children = lis[i].children;
     if (children.length != 1) {
       console.log('Want 1 child for <li> # ' + i + ', got ' + buttons.length);
       return;
     }
     buttons.push(children[0]);
   }
-  var password = settings.password;
-  var codes = [];
-  for (var i = 0; i < password.length; i++) {
-    var number = password.charAt(i);
-    var underTen = 0;
-    var min = +Infinity;
-    var found = '';
-    for (var j = 0; j < buttons.length; j++) {
-      var img = buttons[j].style.backgroundImage.match(/url\("(.*)"\)/)[1];
-      var code = buttons[j].getAttribute('data-matrix-key');
-      var mismatch = await compare(img, IMAGES[number]);
+  let password = settings.password;
+  let codes = [];
+  for (let i = 0; i < password.length; i++) {
+    let number = password.charAt(i);
+    let underTen = 0;
+    let min = +Infinity;
+    let found = '';
+    for (let j = 0; j < buttons.length; j++) {
+      let img = buttons[j].style.backgroundImage.match(/url\("(.*)"\)/)[1];
+      let code = buttons[j].getAttribute('data-matrix-key');
+      let mismatch = await compare(img, IMAGES[number]);
       if (mismatch < min) {
         min = mismatch;
         found = code;
