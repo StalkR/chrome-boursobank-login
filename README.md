@@ -1,10 +1,12 @@
 # Boursorama Login Chrome Extension
 
-Boursorama Login automatically logs you in on [Boursorama][4] banking website,
+Boursorama Login brings back login autofill on [Boursorama][4] banking website,
 avoiding the inconvenient virtual keyboard.
 
 Configure your login/password in the options.
 A click on the extension icon will open Boursorama banking website.
+If not logged in, it will autofill the login/password, and you can connect
+with a click on the login button.
 
 Get it on [Chrome Web Store][1], or use the source to upload your own.
 
@@ -15,9 +17,10 @@ Bugs, comments, questions: create a [new issue][2].
 Like a lot of banks, [Boursorama][4] decided to ignore actual security and
 deploy fake security: it gives its customers a weak 8 digit password (with a
 digit-only username too) then asks you to enter that password on a random
-virtual keyboard, breaking password managers. This extension brings automatic
-login back, by analyzing the random-but-comparable virtual keyboard images
-using [Resemble.js][3] and sending the expected input.
+virtual keyboard, breaking standard login autofill by password managers.
+This extension brings login autofill back, by analyzing the
+random-but-comparable virtual keyboard images using [Resemble.js][3] and
+pressing the virtual keyboard on your behalf.
 
 [1]: https://chrome.google.com/webstore/detail/boursorama-login/cfpllbjjlimhggjihfpiipbgmjgnemfm
 [2]: https://github.com/StalkR/chrome-boursorama-login/issues/new
