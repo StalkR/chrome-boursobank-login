@@ -9,8 +9,8 @@ async function autofill() {
   }
 
   const buttons = document.getElementsByClassName('c-button--primary');
-  if (buttons.length != 2) {
-    console.log('Could not find 2 buttons');
+  if (buttons.length < 1) {
+    console.log('Could not find primary buttons');
     return;
   }
 
