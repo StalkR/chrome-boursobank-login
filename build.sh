@@ -1,4 +1,4 @@
 #!/bin/bash
-rm -f boursorama.zip
-zip boursorama.zip manifest.json options.{css,html,js} {background,images,resemble,script,settings}.js icon{16,48,128}.png
-chmod a+r boursorama.zip
+rm -f extension.zip
+zip extension.zip background.js content.js icon{16,48,128}.png images.js manifest.json options.{css,html,js} resemble.js settings.js
+chmod a+r extension.zip
