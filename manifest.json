@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Boursorama Login",
-  "version": "1.11",
+  "version": "1.12",
   "icons": {
     "16": "icon16.png",
     "48": "icon48.png",
@@ -29,7 +29,8 @@
     ],
     "matches": [
       "https://clients.boursorama.com/connexion/",
-      "https://clients.boursorama.com/connexion/?ajx=1"
+      "https://clients.boursorama.com/connexion/?ajx=1",
+      "https://clients.boursorama.com/connexion/?expire="
     ],
     "run_at": "document_idle"
   } ]

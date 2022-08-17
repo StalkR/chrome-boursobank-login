@@ -1,4 +1,10 @@
 (function(){
+  const url = new URL(window.location.href);
+  if (url.searchParams.has('expire')) {
+    url.searchParams.delete('expire');
+    window.location.replace(url);
+    return;
+  }
   autofill();
 })();
 
