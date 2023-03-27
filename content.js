@@ -34,9 +34,19 @@ async function autofill() {
     console.log('Could not find form_password');
     return;
   }
-  const uls = document.getElementsByClassName('password-input');
-  if (uls.length != 1) {
-    console.log('Want 1 <ul> #password-input, got ' + uls.length);
+  const uls = await (async () => {
+    const max = 10;
+    let attempt = 1;
+    while (true) {
+      const e = document.getElementsByClassName('password-input');
+      if (e.length == 1) return e;
+      console.log('Could not find #password-input, attempt ' + attempt + '/' + max);
+      if (attempt++ >= max) return undefined;
+      await sleep(100);
+    }
+  })();
+  if (!uls) {
+    console.log('Could not find #password-input');
     return;
   }
   const lis = uls[0].children;
@@ -83,4 +93,8 @@ function compare(img1, img2) {
       resolve(parseFloat(data.misMatchPercentage));
     });
   });
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
