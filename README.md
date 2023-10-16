@@ -1,10 +1,10 @@
 # BoursoBank Login Chrome Extension
 
 BoursoBank Login brings back login autofill on [BoursoBank][boursobank]
-banking website, avoiding the inconvenient virtual keyboard.
+website, avoiding the inconvenient virtual keyboard.
 
 Configure your login/password in the options.
-A click on the extension icon will open BoursoBank banking website.
+A click on the extension icon will open BoursoBank website.
 If not logged in, it will autofill the login/password, and you can connect
 with a click on the login button.
 
